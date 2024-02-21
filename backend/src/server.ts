@@ -1,15 +1,18 @@
-const express = require("express");
-const dotenv = require("dotenv");
+import express from "express"
 
-const app = express();
-dotenv.config();
+const logger = require("./services/logger.service")
+const dotenv = require("dotenv")
+const boardRoutes = require("./api/board/board.routes")
 
-// start the server
+dotenv.config()
+const app = express()
+app.use(express.json({ limit: "50mb" }))
+app.use(express.static("public"))
+
+app.use("/api/boards", boardRoutes)
+
 app.listen(process.env.BACK_PORT, () => {
-  console.log(
+  logger.info(
     `server running : http://${process.env.BACK_HOST}:${process.env.BACK_PORT}`
-  );
-});
-
-// Please note that to access an env variable, follow the syntax:
-// process.env.NAME_OF_YOUR_VARIABLE_DECLARED_IN_THE_ENV_FILE
+  )
+})
