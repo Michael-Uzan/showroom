@@ -42,7 +42,8 @@ function evokeBoardViewedActivity(
   boardId: string,
   page: string = DEFAULT_PAGE
 ) {
-  debounceSaved({
+  // bored view is limited to only 1  run - so don't need to debounce it.
+  save({
     event_type: "board_viewd",
     page,
     data: { board_id: boardId },
