@@ -5,7 +5,6 @@ if (!fs.existsSync(logsDir)) {
   fs.mkdirSync(logsDir)
 }
 
-// define the time format
 function getTime() {
   const now = new Date()
   return now.toLocaleString()

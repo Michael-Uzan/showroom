@@ -5,9 +5,7 @@ const config = require("../config")
 
 let dbConn: Db = null
 
-export async function getCollection(
-  collectionName: string
-): Promise<Collection> {
+async function getCollection(collectionName: string): Promise<Collection> {
   try {
     const db = await connect()
     const collection = db.collection(collectionName)
@@ -33,3 +31,5 @@ async function connect(): Promise<Db> {
     throw err
   }
 }
+
+module.exports = { getCollection }

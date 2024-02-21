@@ -3,6 +3,7 @@ import express from "express"
 const logger = require("./services/logger.service")
 const dotenv = require("dotenv")
 const boardRoutes = require("./api/board/board.routes")
+const userActivityRoutes = require("./api/userActivity/userActivity.routes")
 const cors = require("cors")
 
 dotenv.config()
@@ -16,6 +17,7 @@ app.use(
 )
 
 app.use("/api/boards", boardRoutes)
+app.use("/api/user-activity", userActivityRoutes)
 
 app.listen(process.env.BACK_PORT, () => {
   logger.info(

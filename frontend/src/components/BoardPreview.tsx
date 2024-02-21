@@ -1,5 +1,5 @@
-import { IBoard } from "../../interfaces/IBoard"
-import placeHolderImage from "../../assets/imgs/place-holder.png"
+import { IBoard } from "../interfaces/IBoard"
+import placeHolderImage from "../assets/imgs/place-holder.png"
 
 interface IPoprsType {
   board: IBoard

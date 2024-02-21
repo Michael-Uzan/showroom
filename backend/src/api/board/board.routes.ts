@@ -1,5 +1,6 @@
+import express from "express"
+
 const { getBoards } = require("./board.controller")
-const express = require("express")
 
 const router = express.Router()
 

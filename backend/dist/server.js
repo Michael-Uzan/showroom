@@ -13,7 +13,7 @@ const app = (0, express_1.default)();
 app.use(express_1.default.json({ limit: "50mb" }));
 app.use(express_1.default.static("public"));
 app.use(cors({
-    origin: ["http://127.0.0.1:5173/", "http://localhost:5173"],
+    origin: ["http://127.0.0.1:5173", "http://localhost:5173"],
 }));
 app.use("/api/boards", boardRoutes);
 app.listen(process.env.BACK_PORT, () => {

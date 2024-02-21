@@ -9,7 +9,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getCollection = void 0;
 const mongodb_1 = require("mongodb");
 const logger = require("./logger.service");
 const config = require("../config");
@@ -27,7 +26,6 @@ function getCollection(collectionName) {
         }
     });
 }
-exports.getCollection = getCollection;
 function connect() {
     return __awaiter(this, void 0, void 0, function* () {
         if (dbConn) {
@@ -45,4 +43,5 @@ function connect() {
         }
     });
 }
+module.exports = { getCollection };
 //# sourceMappingURL=db.service.js.map
