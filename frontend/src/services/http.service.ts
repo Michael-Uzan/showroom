@@ -1,8 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import axios from "axios"
+import { BASE_URL } from "../config"
 
-const BASE_URL =
-  process.env.NODE_ENV === "production" ? "/api/" : "//localhost:3030/api/"
+import axios from "axios"
 
 export const httpService = {
   get(endpoint: string, data: any = null) {

@@ -1,3 +1,4 @@
+import { BOARD_API } from "../config"
 import { httpService } from "./http.service"
 
 export const boardService = {
@@ -5,5 +6,5 @@ export const boardService = {
 }
 
 function query() {
-  return httpService.get(`boards`)
+  return httpService.get(BOARD_API)
 }

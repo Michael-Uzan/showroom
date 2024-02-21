@@ -3,7 +3,6 @@ import { boardService } from "../services/board.service"
 import { IBoard } from "../interfaces/IBoard"
 import { BoardPreview } from "../components/BoardPreview"
 import { userActivityService } from "../services/userActivity.service"
-import { IUserActivity } from "../interfaces/IUserActivity"
 
 import { useEffect, useState } from "react"
 
@@ -46,11 +45,7 @@ const ShowroomView = ({ boards }: { boards: IBoard[] }) => {
   useEffect(() => {
     const pageLoad = async () => {
       try {
-        await userActivityService.save({
-          timestamp: Date.now(),
-          page: "showroom_feed",
-          event_type: "page_load",
-        } as IUserActivity)
+        await userActivityService.evokePageLoadActivity()
       } catch (error) {
         console.error("cannot send activity to backend", error)
       }
