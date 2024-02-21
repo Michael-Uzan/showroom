@@ -33,8 +33,6 @@ function connect() {
         if (dbConn) {
             return dbConn;
         }
-        console.log("!!!!!", config.dbUrl);
-        console.log("!!!!!", config.dbName);
         try {
             const client = yield mongodb_1.MongoClient.connect(config.dbUrl);
             const db = client.db(config.dbName);

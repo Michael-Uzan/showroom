@@ -13,8 +13,9 @@ const logger = require("../../services/logger.service");
 function query() {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            console.log("!!!!!", config.boardCollectionName);
-            const boards = yield dbService.getCollection(config.boardCollectionName);
+            const collection = yield dbService.getCollection(config.boardCollectionName);
+            const boards = yield collection.find().toArray();
+            logger.info("Client request boards");
             return boards;
         }
         catch (err) {
