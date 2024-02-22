@@ -5,12 +5,14 @@
   width: 100%;
   background-color: #fff;
   border-bottom: 1px inset $secondaryColor;
-  padding: 0 20px;
+  padding: 0 40px;
+  z-index: 10;
 
   .logo {
     margin: 0 30px;
     letter-spacing: 3px;
     font-weight: 500;
+    white-space: nowrap;
   }
 
   .title {

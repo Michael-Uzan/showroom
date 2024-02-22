@@ -33,12 +33,3 @@
       1fr;
   }
 }
-
-.main-container.boards {
-  @include for-wide-layout {
-    grid-template-columns:
-      1fr
-      minmax(auto, 1100px)
-      1fr;
-  }
-}

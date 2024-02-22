@@ -36,7 +36,8 @@ export const BoardPreview = ({ board }: IPropsType) => {
 
   return (
     <div
-      className="board-preview"
+      className="board-preview pointer"
+      id={id}
       onClick={onBoardClicked}
       onMouseEnter={onBoardHover}
     >

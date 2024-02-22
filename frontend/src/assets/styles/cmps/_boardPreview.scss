@@ -1,6 +1,10 @@
 .board-preview {
   margin-bottom: 100px;
 
+  &:hover {
+    opacity: 0.8;
+  }
+
   .board-title {
     font-size: rem(55px);
     font-weight: 400;

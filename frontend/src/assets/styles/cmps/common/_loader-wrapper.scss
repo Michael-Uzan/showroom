@@ -1,0 +1,13 @@
+.loader-wrapper {
+  display: grid;
+  place-content: center;
+  padding-top: 200px;
+
+  .loader-image {
+    width: 200px;
+  }
+
+  .page-not-found {
+    font-size: rem(40px);
+  }
+}

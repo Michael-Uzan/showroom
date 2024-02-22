@@ -5,12 +5,10 @@ interface IPropsType {
   boards: IBoard[]
 }
 
-export const MenuBar = ({ boards }: IPropsType) => {
-  return (
-    <div>
-      {boards.map(({ title }: IBoard) => (
-        <MenuItem title={title} />
-      ))}
-    </div>
-  )
-}
+export const MenuBar = ({ boards }: IPropsType) => (
+  <div className="menu-bar">
+    {boards.map((board: IBoard) => (
+      <MenuItem key={board._id} board={board} />
+    ))}
+  </div>
+)

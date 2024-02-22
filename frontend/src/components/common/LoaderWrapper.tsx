@@ -19,10 +19,12 @@ export const LoaderWrapper = ({
 }: IPropType) => {
   return loading ? (
     <div className="loader-wrapper">
-      <img src={ImageLoading} />
+      <img className="loader-image" src={ImageLoading} />
     </div>
   ) : error ? (
-    <div>{errorMessage || "404 Not Found"}</div>
+    <div className="loader-wrapper">
+      <div className="page-not-found">{errorMessage || "404 Not Found!"}</div>
+    </div>
   ) : (
     <div className={className}>{children}</div>
   )

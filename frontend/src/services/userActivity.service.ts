@@ -1,6 +1,6 @@
+import { httpService } from "./http.service"
 import { DEBOUNCE_TIME, DEFAULT_PAGE, USER_ACTIVITY_API } from "../config"
 import { IUserActivity } from "../interfaces/IUserActivity"
-import { httpService } from "./http.service"
 
 import loadsh from "lodash"
 
