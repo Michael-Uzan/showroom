@@ -9,22 +9,22 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const activityService = require("./userActivity.service");
+const userActivityService = require("./userActivity.service");
 const logger = require("../../services/logger.service");
-function addActivity(req, res) {
+function addUserActivity(req, res) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const activity = req.body;
-            const addedActivity = yield activityService.save(activity);
-            res.send(addedActivity);
+            const userActivity = req.body;
+            const addedUserActivity = yield userActivityService.save(userActivity);
+            res.send(addedUserActivity);
         }
         catch (err) {
-            logger.error("Failed to add activity", err);
-            res.status(500).send({ err: "Failed to add activity" });
+            logger.error("Failed to add user activity", err);
+            res.status(500).send({ err: "Failed to add user activity" });
         }
     });
 }
 module.exports = {
-    addActivity,
+    addUserActivity,
 };
 //# sourceMappingURL=userActivity.controller.js.map

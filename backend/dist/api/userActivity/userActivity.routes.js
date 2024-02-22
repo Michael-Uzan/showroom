@@ -4,8 +4,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const { addActivity } = require("./userActivity.controller");
+const { addUserActivity } = require("./userActivity.controller");
 const router = express_1.default.Router();
-router.post("/", addActivity);
+router.post("/", addUserActivity);
 module.exports = router;
 //# sourceMappingURL=userActivity.routes.js.map

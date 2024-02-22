@@ -5,7 +5,7 @@ import { Request, Response } from "express"
 const boardService = require("./board.service")
 const logger = require("../../services/logger.service")
 
-async function getBoards(req: Request, res: Response) {
+async function getBoards(_req: Request, res: Response) {
   try {
     const boards: IBoard[] = await boardService.query()
     res.json(boards)

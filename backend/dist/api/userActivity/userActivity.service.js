@@ -15,9 +15,10 @@ const logger = require("../../services/logger.service");
 function save(userActivity) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
-            const collection = yield dbService.getCollection("board");
+            const collection = yield dbService.getCollection(config.userActivityCollectionName);
             const { insertedId, acknowledged } = yield collection.insertOne(userActivity);
             if (acknowledged) {
+                logger.info(`User Activity: ${userActivity.event_type}, at ${userActivity.page}`);
                 return insertedId;
             }
             else {
