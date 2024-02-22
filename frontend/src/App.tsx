@@ -2,7 +2,7 @@ import ShowroomView from "./views/ShowroomView"
 
 function App() {
   return (
-    <div>
+    <div className="main-container">
       <ShowroomView />
     </div>
   )

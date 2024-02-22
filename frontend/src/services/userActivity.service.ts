@@ -15,7 +15,7 @@ function save(userActivity: IUserActivity) {
   return httpService.post(USER_ACTIVITY_API, newActivity)
 }
 
-// a function to bulked the activities in order to reduce calls to the backend
+// a function to bulked the activities to reduce calls to the backend.
 const debounceSaved = loadsh.debounce(function (activity: IUserActivity) {
   save(activity)
 }, DEBOUNCE_TIME)
