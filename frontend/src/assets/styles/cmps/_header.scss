@@ -1,0 +1,26 @@
+.header {
+  height: 80px;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1px inset $secondaryColor;
+  padding: 0 20px;
+
+  .logo {
+    margin: 0 30px;
+    letter-spacing: 2px;
+    font-weight: 500;
+  }
+
+  .title {
+    margin-left: 10px;
+    margin-bottom: 0;
+    margin-right: 6px;
+  }
+
+  .triangle {
+    transform: rotate(180deg);
+    margin-top: 6px;
+  }
+}

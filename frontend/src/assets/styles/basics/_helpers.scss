@@ -82,6 +82,14 @@
   text-align: center;
 }
 
+.upper-case {
+  text-transform: uppercase;
+}
+
+.capital {
+  text-transform: capitalize;
+}
+
 .width-100 {
   width: 100%;
 }
@@ -94,4 +102,5 @@
 
 .pointer:hover {
   cursor: pointer;
+  color: $hoverColor;
 }
