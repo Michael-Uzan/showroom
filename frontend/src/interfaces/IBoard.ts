@@ -1,6 +1,6 @@
 export interface IBoard {
   _id: string
-  title?: string
+  title: string
   description?: string
   imageUrl: string
 }

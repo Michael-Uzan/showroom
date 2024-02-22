@@ -1,8 +1,8 @@
 import { LoaderWrapper } from "../components/common/LoaderWrapper"
+import { MenuBar } from "../components/MenuBar"
+import { ShowroomPreview } from "../components/ShowroomPreview"
 import { boardService } from "../services/board.service"
 import { IBoard } from "../interfaces/IBoard"
-import { BoardPreview } from "../components/BoardPreview"
-import { userActivityService } from "../services/userActivity.service"
 
 import { useEffect, useState } from "react"
 
@@ -12,7 +12,7 @@ const ShowroomViewWrapper = () => {
   const [error, setError] = useState<boolean>(false)
 
   useEffect(() => {
-    const loadTodos = async () => {
+    const loadBoards = async () => {
       try {
         setLoading(true)
         const loadBoards = await boardService.query()
@@ -29,36 +29,15 @@ const ShowroomViewWrapper = () => {
       }
     }
 
-    loadTodos()
+    loadBoards()
   }, [])
 
   return (
-    <LoaderWrapper loading={loading} error={error}>
-      <ShowroomView boards={boards} />
+    <LoaderWrapper className="showroom-view" loading={loading} error={error}>
+      <MenuBar boards={boards} />
+      <ShowroomPreview boards={boards} />
     </LoaderWrapper>
   )
 }
 
 export default ShowroomViewWrapper
-
-const ShowroomView = ({ boards }: { boards: IBoard[] }) => {
-  useEffect(() => {
-    const pageLoad = async () => {
-      try {
-        await userActivityService.evokePageLoadActivity()
-      } catch (error) {
-        console.error("cannot send activity to backend", error)
-      }
-    }
-
-    pageLoad()
-  }, [])
-
-  return (
-    <div>
-      {boards.map((board: IBoard) => (
-        <BoardPreview key={board._id} board={board} />
-      ))}
-    </div>
-  )
-}

@@ -4,11 +4,11 @@ import { userActivityService } from "../services/userActivity.service"
 
 import { useRef } from "react"
 
-interface IPoprsType {
+interface IPropsType {
   board: IBoard
 }
 
-export const BoardPreview = ({ board }: IPoprsType) => {
+export const BoardPreview = ({ board }: IPropsType) => {
   const isHovered = useRef<boolean>(false)
 
   const { _id: id, title, description, imageUrl } = board
@@ -35,9 +35,15 @@ export const BoardPreview = ({ board }: IPoprsType) => {
   }
 
   return (
-    <div onClick={onBoardClicked} onMouseEnter={onBoardHover}>
-      {title ? <div>{title}</div> : null}
-      {description ? <div>{description}</div> : null}
+    <div
+      className="board-preview"
+      onClick={onBoardClicked}
+      onMouseEnter={onBoardHover}
+    >
+      <div className="board-title capital">{title}</div>
+      {description ? (
+        <div className="board-description">{description}</div>
+      ) : null}
       <img src={imageUrl || placeHolderImage} />
     </div>
   )
